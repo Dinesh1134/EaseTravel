@@ -1,24 +1,24 @@
-import React, { useState, useContext } from 'react'
+import React from 'react'
 import { Container, Row, Col, Form, FormGroup, Button } from 'reactstrap'
 import '../styles/login.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import registerImg from '../assets/images/login.png'
 import userIcon from '../assets/images/user.png'
 
 const Register = () => {
-   const [credentials, setCredentials] = useState({
-      userName: undefined,
-      email: undefined,
-      password: undefined
-   })
+   // const [credentials, setCredentials] = useState({
+   //    userName: undefined,
+   //    email: undefined,
+   //    password: undefined
+   // })
 
-   const handleChange = e => {
-      setCredentials(prev => ({ ...prev, [e.target.id]: e.target.value }))
-   }
+   // const handleChange = e => {
+   //    setCredentials(prev => ({ ...prev, [e.target.id]: e.target.value }))
+   // }
 
-   const handleClick = e => {
-      e.preventDefault()
-   }
+   // const handleClick = e => {
+   //    e.preventDefault()
+   // }
 
    return (
       <section>
@@ -36,15 +36,15 @@ const Register = () => {
                         </div>
                         <h2>Register</h2>
 
-                        <Form onSubmit={handleClick}>
+                        <Form>
                            <FormGroup>
-                              <input type="text" placeholder='Username' id='username' onChange={handleChange} required />
+                              <input type="text" placeholder='Username' id='username' required />
                            </FormGroup>
                            <FormGroup>
-                              <input type="email" placeholder='Email' id='email' onChange={handleChange} required />
+                              <input type="email" placeholder='Email' id='email' required />
                            </FormGroup>
                            <FormGroup>
-                              <input type="password" placeholder='Password' id='password' onChange={handleChange} required />
+                              <input type="password" placeholder='Password' id='password' required />
                            </FormGroup>
                            <Button className='btn secondary__btn auth__btn' type='submit'>Create Account</Button>
                         </Form>

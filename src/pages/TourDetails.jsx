@@ -1,4 +1,4 @@
-import React,{useRef,useState} from 'react'
+import React,{useRef} from 'react'
 import '../styles/tour-details.css'
 import { Container, Row, Col, Form, ListGroup } from 'reactstrap'
 import { useParams } from 'react-router-dom'
@@ -11,7 +11,6 @@ export const TourDetails = () => {
 
   const { id } = useParams()
   const reviewMsgRef = useRef('')
-  const [tourRating, setTourRating] = useState(null)
   const tour = tourData.find(tour=> tour.id === id)
   const { photo, title, desc, price, reviews, city, address, distance, maxGroupSize } = tour
   const options = { day: 'numeric', month: 'long', year: 'numeric' }
@@ -19,8 +18,6 @@ export const TourDetails = () => {
 
   const submitHandler = async e => {
     e.preventDefault()
-    const reviewText = reviewMsgRef.current.value
-
   }
   return (
   <>
@@ -64,11 +61,11 @@ export const TourDetails = () => {
 
                   <Form onSubmit={submitHandler}>
                   <div className="d-flex align-items-center gap-3 mb-4 rating__group">
-                                 <span onClick={() => setTourRating(1)}>1 <i class='ri-star-s-fill'></i></span>
-                                 <span onClick={() => setTourRating(2)}>2 <i class='ri-star-s-fill'></i></span>
-                                 <span onClick={() => setTourRating(3)}>3 <i class='ri-star-s-fill'></i></span>
-                                 <span onClick={() => setTourRating(4)}>4 <i class='ri-star-s-fill'></i></span>
-                                 <span onClick={() => setTourRating(5)}>5 <i class='ri-star-s-fill'></i></span>
+                                 <span>1 <i class='ri-star-s-fill'></i></span>
+                                 <span>2 <i class='ri-star-s-fill'></i></span>
+                                 <span>3 <i class='ri-star-s-fill'></i></span>
+                                 <span>4 <i class='ri-star-s-fill'></i></span>
+                                 <span>5 <i class='ri-star-s-fill'></i></span>
                               </div>
 
                     <div className="review__input">

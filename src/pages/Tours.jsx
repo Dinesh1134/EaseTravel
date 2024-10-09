@@ -7,12 +7,9 @@ import SearchBar from './../shared/SearchBar'
 import Newsletter from './../shared/Newsletter'
 import { Col, Container, Row } from 'reactstrap'
 
-
-
 export const Tours = () => {
    const [pageCount, setPageCount] = useState(0)
    const [page, setPage] = useState(0)
-
 
    useEffect(() => {
       const pages = Math.ceil(5 / 4)

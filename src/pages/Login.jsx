@@ -1,23 +1,23 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import { Container, Row, Col, Form, FormGroup, Button } from 'reactstrap'
 import '../styles/login.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import loginImg from '../assets/images/login.png'
 import userIcon from '../assets/images/user.png'
 
 export const Login = () => {
-  const [credentials, setCredentials] = useState({
-    email: undefined,
-    password: undefined
- });
+//   const [credentials, setCredentials] = useState({
+//     email: undefined,
+//     password: undefined
+//  });
 
-  const handleChange = e => {
-    setCredentials(prev => ({ ...prev, [e.target.id]: e.target.value }))
- };
+//   const handleChange = e => {
+//     setCredentials(prev => ({ ...prev, [e.target.id]: e.target.value }))
+//  };
 
- const handleClick = async e => {
-  e.preventDefault()
- }
+//  const handleClick = async e => {
+//   e.preventDefault()
+//  }
   return (
     <section>
        <Container>
@@ -34,12 +34,12 @@ export const Login = () => {
                       </div>
                       <h2>Login</h2>
 
-                      <Form onSubmit={handleClick}>
+                      <Form>
                          <FormGroup>
-                            <input type="email" placeholder='Email' id='email' onChange={handleChange} required />
+                            <input type="email" placeholder='Email' id='email' required />
                          </FormGroup>
                          <FormGroup>
-                            <input type="password" placeholder='Password' id='password' onChange={handleChange} required />
+                            <input type="password" placeholder='Password' id='password'  required />
                          </FormGroup>
                          <Button className='btn secondary__btn auth__btn' type='submit'>Login</Button>
                       </Form>

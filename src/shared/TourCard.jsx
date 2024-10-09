@@ -3,7 +3,6 @@ import { Card, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './tour-card.css';
 import calculateAvgRating from '../utils/avgRating';
-import { TourDetails } from '../pages/TourDetails';
 const TourCard = ({ tour }) => {
 const { id, title, city, photo, price, featured, reviews } = tour
 const { totalRating, avgRating } = calculateAvgRating(reviews)
